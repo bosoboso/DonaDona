@@ -1,0 +1,30 @@
+<h1>経歴一覧</h1>
+<%= form_tag 'search', method: :get do %>
+  <%= text_field_tag :search%>
+  <%= submit_tag '検索'%>
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>社員番号</th>
+      <th>開始</th>
+      <th>終了</th>
+      <th>プロジェクト概要</th>
+      <th>言語</th>
+      <th>OS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @careers.each do |career| %>
+      <tr>
+        <td><%= career.employee_id %></td>
+        <td><%= career.from %></td>
+        <td><%= career.to %></td>
+        <td><%= career.project %></td>
+        <td><%= career.language %></td>
+        <td><%= career.os %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

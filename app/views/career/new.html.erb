@@ -1,0 +1,10 @@
+<h1>プロジェクト情報入力</h1>
+<%= form_for @career , url: career_create_path do |f| %>
+ <%= f.hidden_field  :employee_id, :value => current_user.employee_id %><br />
+    開始 : <%= f.date_field :from %><br />
+    終了 : <%= f.date_field :to %><br />
+     プロジェクト概要    : <%= f.text_field :project %><br />
+    言語    : <%= f.text_field :language %><br />
+    OS    : <%= f.text_field :os %><br />
+  <%= f.submit %>
+<% end %>

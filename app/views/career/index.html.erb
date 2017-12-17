@@ -1,0 +1,25 @@
+<h1>経歴一覧</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>開始</th>
+      <th>終了</th>
+      <th>プロジェクト概要</th>
+      <th>言語</th>
+      <th>OS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @careers.each do |career| %>
+      <tr>
+        <td><%= career.from %></td>
+        <td><%= career.to %></td>
+        <td><%= career.project %></td>
+        <td><%= career.language %></td>
+        <td><%= career.os %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<li><%= link_to '経歴追加', career_new_url, method: :get %></li>
+<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
